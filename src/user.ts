@@ -1,9 +1,11 @@
 import { Elysia } from "elysia";
 
 import { userService } from "./userService";
+import { getUserId } from "./getUserId";
 
 export const user = new Elysia({ prefix: '/user' })
     .use(userService)
+    .use(getUserId)
 
     .post('/signup',
         async ({ body: { username, password }, store, status }) => {
