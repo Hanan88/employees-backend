@@ -1,14 +1,11 @@
 import { Elysia } from 'elysia'
 import { swagger } from '@elysiajs/swagger'
 
-import { note } from './note'
-import { user } from './user'
+import EmployeesRoute from './features/employees/routes/EmployeesRoute'
 
 const app = new Elysia()
     .use(swagger())
 
-    .use(user)
-    
-    .use(note) 
+    .use(EmployeesRoute)
 
     .listen(3000)
